@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_product_seasonal_availabilities",
+  "info": {
+    "displayName": "SeasonalAvailability",
+    "icon": "shoppingCart",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "startMonth": {
+      "type": "integer"
+    },
+    "endMonth": {
+      "type": "integer"
+    },
+    "note": {
+      "type": "text"
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "orderNumber": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order.order-item"
+    },
+    "statusOrder": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "assigned",
+        "in_delivery",
+        "delivered",
+        "cancelled",
+        "rejected"
+      ]
+    },
+    "deliveryDetails": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order.delivery-details"
+    },
+    "deliverySequence": {
+      "type": "integer"
+    },
+    "customerNote": {
+      "type": "string"
+    },
+    "adminNote": {
+      "type": "text"
+    },
+    "totalAmount": {
+      "type": "decimal"
+    },
+    "estimatedDeliveryTime": {
+      "type": "date"
+    },
+    "actualDeliveryTime": {
+      "type": "date"
+    },
+    "rejectionReason": {
+      "type": "string"
+    },
+    "client": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
+    },
+    "delivery": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "deliveryOrders"
+    },
+    "delivery_route": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::delivery-route.delivery-route",
+      "inversedBy": "orders"
+    }
+  }
+}

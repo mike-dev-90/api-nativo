@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_order_delivery_details",
+  "info": {
+    "displayName": "DeliveryDetails",
+    "icon": "shoppingCart"
+  },
+  "options": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    },
+    "coordinates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.coordinates"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "alternativePhone": {
+      "type": "string"
+    },
+    "preferredTime": {
+      "type": "date"
+    },
+    "deliveryInstructions": {
+      "type": "text"
+    }
+  }
+}
